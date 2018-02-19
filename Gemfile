@@ -34,6 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
   gem 'factory_bot_rails'
   gem 'pry-byebug'
   gem 'pry-rails'
