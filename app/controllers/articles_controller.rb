@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
       flash[:notice] = 'Article was successfully created.'
       redirect_to @article
     else
+      @message = "Title can't be blank"
       render :new
     end
   end

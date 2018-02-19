@@ -17,6 +17,6 @@ Feature: Create articles
     And I should see "Excited about learning a new framework"
 
   Scenario: Blogger doesn't enter a title for the article [Sad Path]
-    When I fill in "Content" with "Excited about learning a new framework"
+    When I fill in "content" with "Excited about learning a new framework"
     And I click "Create Article" button
     Then I should see "Title can't be blank"
