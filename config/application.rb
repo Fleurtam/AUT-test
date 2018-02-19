@@ -18,9 +18,18 @@ Bundler.require(*Rails.groups)
 
 module AUTTest
   class Application < Rails::Application
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
-
+    config.generators do |generate|
+        generate.helper false
+        generate.assets false
+        generate.view_specs false
+        generate.helper_specs false
+        generate.routing_specs false
+        generate.controller_specs false
+        generate.system_tests false
+      end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
