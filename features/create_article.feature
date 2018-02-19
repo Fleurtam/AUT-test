@@ -20,3 +20,13 @@ Feature: Create articles
     When I fill in "content" with "Excited about learning a new framework"
     And I click "Create Article" button
     Then I should see "Title can't be blank"
+
+
+  Scenario: Blogger doesn't enter a title for the article [Sad Path]
+    When I fill in "title" with "Green is good"
+    And I click "Create Article" button
+    Then I should see "Content can't be blank"
+
+  Scenario: Blogger doesn't enter a title for the article [Sad Path]
+    When I click "Create Article" button
+    Then I should see "Both fields can't be blank"
