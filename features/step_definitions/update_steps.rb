@@ -14,6 +14,7 @@ Given("I visit the {string} article page") do |article_title|
 end
 
 
-Then("I will be directed to the {string} page") do |string|
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I will be directed to the {string} page") do |article_title|
+  article = Article.find_by(title: article_title)
+  expect(page.current_path).to eq article_path(article)
 end
