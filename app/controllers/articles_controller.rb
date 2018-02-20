@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-        @articles = Article.all
+    @articles = Article.all
   end
 
   def new
@@ -8,7 +8,8 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-
+    binding.pry
+    @article = Article.find(params[:id])
   end
 
   def create
@@ -20,7 +21,7 @@ class ArticlesController < ApplicationController
     else
       if params[:title].blank? && params[:content].blank?
         @message = "Both fields can't be blank"
-       elsif params[:content].blank?
+      elsif params[:content].blank?
         @message = "Content can't be blank"
       else
         @message = "Title can't be blank"
@@ -29,9 +30,9 @@ class ArticlesController < ApplicationController
     end
   end
 
-    def show
-      @article = Article.find(params[:id])
-    end
+  def show
+    @article = Article.find(params[:id])
+  end
 
 
 end

@@ -1,21 +1,16 @@
-Given("The following article exists") do |table|
+Given("the following articles exist") do |table|
   table.hashes.each do |article|
     Article.create(article)
   end
-end
-
-Given("We have written a article about {string}") do |title|
-  @article = Article.first
-  expect(@article.title).to eq title
 end
 
 Then("I will be directed to the edit page") do
   click_button('Edit')
 end
 
-Given("visit the {string} page") do |string|
-  visit "/articles/#{@article.id}"
-
+Given("I visit the {string} article page") do |article_title|
+  article = Article.find_by(title: article_title)
+  visit article_path(article)
 end
 
 
