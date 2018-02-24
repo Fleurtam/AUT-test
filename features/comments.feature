@@ -12,7 +12,6 @@ Background:
 Scenario: User adds a comment
   Given I visit the site
   And I click on "Learn Rails 5"
-  And I click on "Create Comment"
   And I fill in "Comment" with "Green is good"
   And I fill in "Email" with "Holger@test.com"
   And I click on "Submit Comment"

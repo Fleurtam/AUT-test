@@ -4,6 +4,10 @@
   <input type="submit" value="Edit">
 </form>
 
-  <% flash.keys.each do |type| %>
-    <%= flash[type] %>
-  <% end %>
+<%= form_with model: Comment.new, local: true do |form| %>
+  <%= form.label :body, value: "Comment"%>
+  <%= form.text_field :body%>
+  <%= form.label :email%>
+  <%= form.email_field :email %>
+  <%= form.submit %>
+<%end%>
