@@ -4,6 +4,11 @@
   <input type="submit" value="Edit">
 </form>
 
+<% @article.comments.each do |comment| %>
+  <p><%= comments.body %></p>
+  <small><% comments.email %></small>
+<%end%>
+
 <%= form_with model: Comment.new, local: true do |form| %>
   <%= form.label :body, value: "Comment"%>
   <%= form.text_field :body, id: 'comment_body_comment'%>
