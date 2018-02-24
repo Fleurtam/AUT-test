@@ -1,7 +1,9 @@
 <% @articles.each do |article| %>
   <p><%= article.title %></p>
   <p><%= article.content %></p>
+  <p>Written by <%= article.author%> at <%= article.created_at%> </p>
+
+
 <% end %>
 
 <a href="/articles/new" >new article</a>
-
