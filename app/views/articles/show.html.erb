@@ -5,11 +5,12 @@
 </form>
 
 <% @article.comments.each do |comment| %>
-  <p><%= comments.body %></p>
-  <small><% comments.email %></small>
+  <p><%= comment.body %></p>
+  <small><%= comment.email %></small>
 <%end%>
 
-<%= form_with model: Comment.new, local: true do |form| %>
+<%= form_with model: [@article, Comment.new], local: true do |form| %>
+  <%= form.hidden_field :article_id, value: @article.id %>
   <%= form.label :body, value: "Comment"%>
   <%= form.text_field :body, id: 'comment_body_comment'%>
   <%= form.label :email%>
