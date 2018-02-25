@@ -19,6 +19,7 @@ Scenario: User adds a comment
   And I should see "Green is good"
 
 Scenario: User types email in wrong format
-  Given I visit the site
+  Given I visit the "Learn Rails 5" article
+  And I fill in "Comment" with "Green is good"
   And I fill in "Email" with "Holger.test"
   And I should see "Wrong format"
