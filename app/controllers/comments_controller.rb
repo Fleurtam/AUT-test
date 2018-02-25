@@ -4,12 +4,15 @@ class CommentsController < ApplicationController
     if @comment.persisted?
       flash[:success] = 'Your comment has been succesfully created'
       redirect_back(fallback_location: root_path)
+    else
+      flash[:error] = 'Comment failed'
+      redirect_back(fallback_location: root_path)
     end
   end
 
   private
 
   def params_comment
-    params.require(:comment).permit(:email, :body, :article_id)
+    params.require(:comment).permit(:email, :body)
   end
 end

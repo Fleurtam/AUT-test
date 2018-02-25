@@ -18,7 +18,9 @@ RSpec.describe Comment, type: :model do
         comment = Comment.new(body: "Holger is the man", email: "Holger@test")
       end
         it { should_not be_valid }
+        it { is_expected.to validate_presence_of :body }
     end
+
 
     it { is_expected.to belong_to :article}
 
