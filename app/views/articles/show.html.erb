@@ -10,7 +10,6 @@
 <%end%>
 
 <%= form_with model: [@article, Comment.new], local: true do |form| %>
-  <%= form.hidden_field :article_id, value: @article.id %>
   <%= form.label :body, value: "Comment"%>
   <%= form.text_field :body, id: 'comment_body_comment'%>
   <%= form.label :email%>
