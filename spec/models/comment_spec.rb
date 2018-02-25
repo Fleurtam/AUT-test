@@ -7,7 +7,6 @@ RSpec.describe Comment, type: :model do
       expect(FactoryBot.build(:comment)).to be_valid
     end
 
-
     describe 'DB table' do
       it { is_expected.to have_db_column :id}
       it { is_expected.to have_db_column :body}
@@ -15,7 +14,10 @@ RSpec.describe Comment, type: :model do
     end
 
     describe 'Validations' do
-      it { is_expected.to validate_presence_of :email }
+      before do
+        comment = Comment.new(body: "Holger is the man", email: "Holger@test")
+      end
+        it { should_not be_valid }
     end
 
     it { is_expected.to belong_to :article}
