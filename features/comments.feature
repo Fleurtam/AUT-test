@@ -17,3 +17,8 @@ Scenario: User adds a comment
   And I click on "Submit Comment"
   And I should see "Holger@test.com"
   And I should see "Green is good"
+
+Scenario: User types email in wrong format
+  Given I visit the site
+  And I fill in "Email" with "Holger.test"
+  And I should see "Wrong format"

@@ -11,7 +11,6 @@ Feature: In order to please users I want to be able to edit my posts
   Scenario: Blogger should be able to edit post
     And I visit the "Green is good" article page
     And I click "Edit" button
-    Then show me the page
     And I fill in "Title" with "Green is awesome"
     And I fill in "Content" with "Always green, Always green, Always green"
     And I click "Update Article" button
