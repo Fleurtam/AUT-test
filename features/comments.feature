@@ -22,4 +22,5 @@ Scenario: User types email in wrong format
   Given I visit the "Learn Rails 5" article
   And I fill in "Comment" with "Green is good"
   And I fill in "Email" with "Holger.test"
-  And I should see "Wrong format"
+  # And show me the page
+  And I should see "Please include an '@' in the email address. 'Holger.test' is missing an '@'"
